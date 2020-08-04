@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import {MultByPipe} from './pipes/mult-by.pipe';
 import { StringCapitalizerPipe } from './pipes/string-capitalizer.pipe';
+import { SearchPipe } from './pipes/search.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MultByPipe,
-    StringCapitalizerPipe
+    StringCapitalizerPipe,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

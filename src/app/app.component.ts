@@ -1,10 +1,13 @@
 import {Component} from '@angular/core';
+import {Post} from './post.interface';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
+
 export class AppComponent{
   e: number = Math.E;
   str = 'hello world';
@@ -23,5 +26,13 @@ export class AppComponent{
     },
   };
   value = 'some very long string to capitalize';
+
+  search = '';
+
+  post: Post[] = [
+    {title: 'Beer', text: 'All about beer.'},
+    {title: 'Pizza', text: 'Allot of different tastes'},
+    {title: 'Vine', text: 'Best drink ever'},
+  ];
 
 }

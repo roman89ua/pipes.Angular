@@ -40,3 +40,14 @@
   {{value | capitalize}}
 
 </div>
+
+<label>Search
+  <input type="text" [(ngModel)]="search" placeholder="Tip to start search..." >
+</label>
+<div
+  class="card"
+  *ngFor="let p of post | filter: search"
+>
+  <h3>{{p.title}}</h3>
+  <p>{{p.text}}</p>
+</div>
