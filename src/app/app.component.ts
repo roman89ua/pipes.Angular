@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Post} from './post.interface';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import {Post} from './post.interface';
 })
 
 
-export class AppComponent{
+export class AppComponent implements OnInit{
   e: number = Math.E;
   str = 'hello world';
   date: Date = new Date();
@@ -35,4 +36,23 @@ export class AppComponent{
     {title: 'Vine', text: 'Best drink ever'},
   ];
 
+  promise: Promise<string> = new Promise<string>(resolve => {
+    setTimeout(() => {
+      resolve('Promise resolved');
+    }, 4000);
+  });
+
+  date2: Date;
+
+  date$: Observable<Date> = new Observable(obs => {
+    setInterval(() => {
+      obs.next(new Date());
+    }, 1000);
+  });
+
+  ngOnInit(): void {
+    this.date$.subscribe( d => {
+      this.date2 = d;
+    });
+  }
 }

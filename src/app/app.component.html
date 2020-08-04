@@ -26,28 +26,49 @@
   <pre>{{obj | json}}</pre>
 
   <br>
-  <h3>Custom pipe to multiply numbers</h3>
-  <h4>mult pipe</h4>
-  {{10 | mult}}
-  {{10 | mult: 2}}
-  {{10 | mult: 3}}
-  {{10 | mult: 5}}
-  {{10 | mult: 8}}
-  {{10 | mult: 13}}
-  {{10 | mult: 21}}
-  <br>
-  <h4>capitalizer pipe</h4>
-  {{value | capitalize}}
+  <div class="container">
+    <h3>Custom pipe to multiply numbers</h3>
+    <h4>mult pipe</h4>
+    {{10 | mult}}
+    {{10 | mult: 2}}
+    {{10 | mult: 3}}
+    {{10 | mult: 5}}
+    {{10 | mult: 8}}
+    {{10 | mult: 13}}
+    {{10 | mult: 21}}
+    <br>
+  </div>
+
+  <div class="container">
+    <h4>capitalizer pipe</h4>
+    {{value | capitalize}}
+  </div>
+
 
 </div>
+<hr>
+<br>
+<div class="container">
+  <h2>Pipe to filter</h2>
+  <label>Search
+    <input type="text" [(ngModel)]="search" placeholder="Tip to start search..." >
+  </label>
+  <div
+    class="card"
+    *ngFor="let p of post | filter: search"
+  >
+    <h3>{{p.title}}</h3>
+    <p>{{p.text}}</p>
+  </div>
+</div>
 
-<label>Search
-  <input type="text" [(ngModel)]="search" placeholder="Tip to start search..." >
-</label>
-<div
-  class="card"
-  *ngFor="let p of post | filter: search"
->
-  <h3>{{p.title}}</h3>
-  <p>{{p.text}}</p>
+<hr>
+<div class="container">
+  <h2>Async pipe</h2>
+  <p>Wait for this...{{ promise | async}}</p>
+
+  <br>
+
+  <p>Date: {{ date$ | async | date: 'MMM dd, yyyy, hh:mm:ss'}}</p>
+  <p>Date: {{ date2 | date: 'MMM dd, yyyy, hh:mm:ss'}}</p>
 </div>
