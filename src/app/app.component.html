@@ -1,6 +1,27 @@
 <div class="container">
   <h1>Angular pipes</h1>
+  <br>
+  <h3>Work with the numbers</h3>
   <p>{{e | number: '1.1-5'}}</p>
   <p>{{e | number: '3.3'}}</p>
   <p>{{e | number: '10.0-0'}}</p>
+  <h3>Work with the strings</h3>
+  {{str | uppercase | lowercase | titlecase }}
+  <br>
+  {{str | titlecase | slice: 1: -4 }}
+  <br>
+  <h3>Date pipes</h3>
+
+  <p>{{date | date: 'mediumTime' }}</p>
+  <h3>Custom date pipe</h3>
+  <p>{{date | date: 'MMM dd, yyyy hh:mm a z'}}</p>
+  <br>
+  <h3>Currenccy pipe</h3>
+  <br>
+  <p>{{floatDot}}</p>
+  <p>{{floatDot | currency: 'UAH '}}</p>
+  <p>{{floatDot | percent: '3.0-1'}}</p>
+  <br>
+  <h3>JSON pipe</h3>
+  <pre>{{obj | json}}</pre>
 </div>
