@@ -16,7 +16,7 @@
   <h3>Custom date pipe</h3>
   <p>{{date | date: 'MMM dd, yyyy hh:mm a z'}}</p>
   <br>
-  <h3>Currenccy pipe</h3>
+  <h3>Currency pipe</h3>
   <br>
   <p>{{floatDot}}</p>
   <p>{{floatDot | currency: 'UAH '}}</p>
@@ -27,7 +27,7 @@
 
   <br>
   <div class="container">
-    <h3>Custom pipe to multiply numbers</h3>
+    <h3>Custom pipes:</h3>
     <h4>mult pipe</h4>
     {{10 | mult}}
     {{10 | mult: 2}}
@@ -68,7 +68,9 @@
   <p>Wait for this...{{ promise | async}}</p>
 
   <br>
-
+  <h4>Using async pipe to subscribe on stream</h4>
   <p>Date: {{ date$ | async | date: 'MMM dd, yyyy, hh:mm:ss'}}</p>
+  <br>
+  <h4>Using regular subscribe on stream at OnInit</h4>
   <p>Date: {{ date2 | date: 'MMM dd, yyyy, hh:mm:ss'}}</p>
 </div>
